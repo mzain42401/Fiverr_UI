@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
-    <div className={` fixed md:sticky inset-y-0 left-0 z-50  w-56  bg-gray-800 text-white transform    ${isOpen ? 'translate-x-0 ' : '-translate-x-full'} transition-transform lg:translate-x-0`}>
+    <div className={` fixed md:sticky inset-y-0 left-0 z-50  w-56 bg-gray-800 text-white transform  md:top-0 top-[56px]  ${isOpen ? 'translate-x-0 ' : '-translate-x-full'} transition-transform lg:translate-x-0`}>
       <div className="flex flex-col h-full ">
         <div className='hidden lg:block'><h1 className=' h-16 flex justify-center items-center'>LOGO</h1></div>
         <div className="flex-1 p-4 space-y-1">
