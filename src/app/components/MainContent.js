@@ -1,6 +1,7 @@
 import LineChart from "./graphs/LineChart";
 import PieChart from "./graphs/PieChart";
 import BarChart from  "./graphs/Barchart"
+import DoughnutChart from "./graphs/DoughnutChart";
 
 const MainContent = () => {
   return (
@@ -21,11 +22,12 @@ const MainContent = () => {
         <PieChart/>
       </div>
       <div  className="bg-[#2c2c2c] border-2 shadow-custom-dark border-[#3a3a3a] border-solid p-4 rounded ">
-        zain
+       <DoughnutChart/>
       </div>
       <div  className="bg-[#2c2c2c] border-2 shadow-custom-dark border-[#3a3a3a] border-solid p-4 rounded ">
-        zain
+       <BarChart/>
       </div>
+     
       
       </div>
     </div>

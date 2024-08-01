@@ -17,9 +17,8 @@ const Dashboard = ({children}) => {
     <div className="flex h-screen overflow-hidden">
       <Sidebar isOpen={sidebarOpen}  />
       <div className="flex-1 flex flex-col">
-      <header className="sticky p-4 flex justify-between md:justify-center items-center bg-[#2c2c2c] text-white ">
+      <header className="sticky p-4 h-[56px] flex justify-between md:justify-center items-center bg-[#2c2c2c]  text-white ">
           <h1 className='md:hidden block'>Logo</h1>
-          <input className='flex-2' type="text" />
           
           <button onClick={toggleSidebar} className="focus:outline-none block md:hidden">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
