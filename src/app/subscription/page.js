@@ -68,13 +68,15 @@ const plans = [
 const SubscriptionPlans = () => {
   return (
     <Dashboard>
+      <div className='flex justify-center items-center flex-col pt-4'>
 
-    <div className="text-center p-8">
-      <h2 className="text-3xl font-bold mb-4">Choose Your Plan</h2>
-      <p className="text-gray-600 mb-8">Select the perfect subscription for your needs</p>
-      <div className="flex flex-wrap justify-center">
-        {plans.map((plan, index) => (
-          <div key={index} className="bg-[#2c2c2c] shadow-lg rounded-lg p-6 m-4 lg:w-72 w-80">
+<h2 className="text-3xl font-bold mb-4">Choose Your Plan</h2>
+<p className="text-gray-600 ">Select the perfect subscription for your needs</p>
+      </div>
+<div className="flex-1 p-4 space-y-4">
+<div className="flex justify-center items-center flex-wrap ">
+{plans.map((plan, index) => (
+          <div key={index} className="bg-[#2c2c2c] shadow-lg rounded-lg p-6 m-4 w-72  ">
             <h3 className="text-xl font-bold mb-2">{plan.icon} {plan.name}</h3>
             <p className="text-2xl font-bold mb-4">{plan.price}</p>
             <ul className="text-left">
@@ -86,8 +88,9 @@ const SubscriptionPlans = () => {
             </ul>
           </div>
         ))}
-      </div>
-    </div>
+  </div>
+  </div>
+    
     </Dashboard>
   );
 };
