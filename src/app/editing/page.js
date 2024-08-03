@@ -1,15 +1,16 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import Dashboard from '../components/Dashboard'
+import EditText from '../components/EditText';
 
 const page = () => {
+
+
+  
   return (
     <>
+      <EditText/>
       
-      <Dashboard>
-      <div className='p-4'>
-      Under Development
-      </div>
-      </Dashboard>
     </>
   )
 }

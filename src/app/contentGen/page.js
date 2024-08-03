@@ -22,11 +22,17 @@ const page = () => {
       </div>
       </div>
 
-      {content?<div>
-      <div className=' w-full  ' >
+      {content?<div className='flex justify-center items-center gap-2 flex-wrap  '>
+      <div className=' w-[450px]  ' >
         <p className='border-[#3a3a3a] border-solid border-2 shadow-custom-dark bg-[#2c2c2c]  text-[#d3d3d3] p-4 rounded'>
           {content}
         </p>
+      </div>
+      <div className=' w-[450px] ' >
+        <p className='border-[#3a3a3a] border-solid border-2 shadow-custom-dark bg-[#2c2c2c]  text-[#d3d3d3] p-4 rounded'>
+          {content}
+        </p>
+       
       </div>
       </div>:null}
 
