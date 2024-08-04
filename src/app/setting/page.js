@@ -1,15 +1,14 @@
 import React from 'react'
+import Settings from '../components/Setting'
 import Dashboard from '../components/Dashboard'
 
 const page = () => {
   return (
     <>
-      <Dashboard>
-        <div className='p-4'>
+    <Dashboard>
 
-        Under development
-        </div>
-      </Dashboard>
+      <Settings/>
+    </Dashboard>
     </>
   )
 }

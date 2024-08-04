@@ -22,10 +22,12 @@ textareaRef.current.style.height=textareaRef.current.scrollHeight + "px"
 
   return (
 <Dashboard>
-<div className="container mx-auto p-4">
+
+<div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px] pb- m-4">
+<div className="bg-[#2c2c2c]  ">
       <textarea
         
-        className="w-full p-2 bg-[#2c2c2c]  border-[#3a3a3a] border-solid border-2 outline-none rounded resize-none overflow-hidden"
+        className="w-full p-2 bg-transparent   outline-none rounded resize-none overflow-hidden"
         onChange={handle}
         value={val}
         placeholder="Type something..."
@@ -33,9 +35,14 @@ textareaRef.current.style.height=textareaRef.current.scrollHeight + "px"
         ref={textareaRef}
       ></textarea>
     </div>
+           </div>
+
 
         <div className='px-4 w-full  flex justify-end items-center' >
+        <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
+
       <button className='px-4 py-2  border-[#3a3a3a] border-solid border-2 rounded bg-[#2c2c2c]  text-[#d3d3d3]' onClick={uploadData}>Upload</button>
+</div>
       </div>
       </Dashboard>
 

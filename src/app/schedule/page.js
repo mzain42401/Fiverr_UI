@@ -1,14 +1,12 @@
 import React from 'react'
 import Dashboard from '../components/Dashboard'
+import MyCalendar from '../components/MyCalendar'
 
 const page = () => {
   return (
     <>
       <Dashboard>
-        <div className='p-4'>
-      Under development
-
-        </div>
+        <MyCalendar/>
       </Dashboard>
     </>
   )

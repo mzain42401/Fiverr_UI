@@ -76,17 +76,24 @@ const SubscriptionPlans = () => {
 <div className="flex-1 p-4 space-y-4">
 <div className="flex justify-center items-center flex-wrap ">
 {plans.map((plan, index) => (
-          <div key={index} className="bg-[#2c2c2c] shadow-lg rounded-lg p-6 m-4 w-72  ">
-            <h3 className="text-xl font-bold mb-2">{plan.icon} {plan.name}</h3>
+  <div key={index}  className=" m-4 bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
+<div className="text-center bg-[#2c2c2c]  shadow-lg rounded-lg p-6  w-72  ">
+            <h3 className="text-xl font-bold mb-2">{plan.icon} </h3>
+            
+            <h3 className="text-xl font-bold mb-2">{plan.name} </h3>
+
             <p className="text-2xl font-bold mb-4">{plan.price}</p>
             <ul className="text-left">
               {plan.features.map((feature, i) => (
-                <li key={i} className="mb-2 text-[#d3d3d3]">
+                <li key={i} className="mb-2 border-t border-[#4a4a4a] py-3 text-[#d3d3d3]">
                   {feature.available ? '✔️' : '❌'} {feature.text}
                 </li>
-              ))}
+              ))} 
+
             </ul>
           </div>
+  </div>
+          
         ))}
   </div>
   </div>
