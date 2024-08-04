@@ -28,8 +28,8 @@ const page = () => {
       </div>
       </div>
 
-      {content?<div className='flex justify-center items-center gap-2 flex-wrap  '>
-      <div className=' w-[450px]  ' >
+      {content?<div className='flex justify-center  gap-2 flex-wrap  '>
+      <div className=' md:w-[450px] w-[350px]  ' >
       <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
 <p className='  shadow-custom-dark bg-[#2c2c2c]  text-[#d3d3d3] p-4 rounded'>
           {content}
@@ -37,11 +37,13 @@ const page = () => {
 </div>
         
       </div>
-      <div className=' w-[450px] ' >
+      <div className=' ' >
       <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
-<p className='  shadow-custom-dark bg-[#2c2c2c]  text-[#d3d3d3] p-4 rounded'>
-          {content}
-        </p>
+      <img
+                src='https://via.placeholder.com/150'
+                alt="User"
+                className=" w-72 h-72 object-cover"
+              />
 </div>
         
        

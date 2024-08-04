@@ -1,19 +1,12 @@
-"use client"
-import { useState } from 'react';
+import Link from "next/link";
+
 
 const Settings = () => {
-  // Replace this with your actual user data source
-  const userData = {
-    name: "John Doe",
-    email: "john@example.com",
-    password: "********",
-    image: "/path/to/image.jpg",
-  };
-
-  const [user, setUser] = useState(userData);
-
-  return (
-    <div className="max-w-2xl shadow overflow-hidden  m-auto mt-10 bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
+    
+    return (
+        <>
+    
+    <div className="md:w-[70%] w-[90%] shadow overflow-hidden  m-auto mt-10 bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px] ">
 <div class="  bg-[#2c2c2c] rounded  ">
     <div class="px-4 py-5 sm:px-6">
         <h3 class="text-lg leading-6 font-medium text-[#d3d3d3]">
@@ -67,9 +60,21 @@ const Settings = () => {
             </div>
         </dl>
     </div>
+    <div className=" flex justify-end rounded p-[2px]">
+
+
+</div>
+
 </div>
            </div>
+<Link href='/setting/edit'>
+           <div className="m-auto mt-3 mb-10 w-max p-[2px] rounded bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc]">
+
+      <div className='px-4 py-2 rounded bg-[#3a3a3a]  text-[#d3d3d3]'>Edit </div>
+</div>
+</Link>
     
+        </>
   );
 };
 
