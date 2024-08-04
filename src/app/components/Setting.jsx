@@ -67,7 +67,7 @@ const Settings = () => {
 
 </div>
            </div>
-<Link href='/setting/edit'>
+<Link className="mb-10" href='/setting/edit'>
            <div className="m-auto mt-3 mb-10 w-max p-[2px] rounded bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc]">
 
       <div className='px-4 py-2 rounded bg-[#3a3a3a]  text-[#d3d3d3]'>Edit </div>

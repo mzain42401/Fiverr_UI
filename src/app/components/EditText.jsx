@@ -23,7 +23,7 @@ textareaRef.current.style.height=textareaRef.current.scrollHeight + "px"
   return (
 <Dashboard>
 
-<div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px] pb- m-4">
+<div className="bg-gradient-to-tr  from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px] pb- m-4">
 <div className="bg-[#2c2c2c]  ">
       <textarea
         
@@ -38,7 +38,7 @@ textareaRef.current.style.height=textareaRef.current.scrollHeight + "px"
            </div>
 
 
-        <div className='px-4 w-full  flex justify-end items-center' >
+        <div className='px-4 mb-10 w-full  flex justify-end items-center' >
         <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
 
       <button className='px-4 py-2  border-[#3a3a3a] border-solid border-2 rounded bg-[#2c2c2c]  text-[#d3d3d3]' onClick={uploadData}>Upload</button>

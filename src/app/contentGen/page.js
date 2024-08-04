@@ -29,7 +29,7 @@ const page = () => {
       </div>
 
       {content?<div className='flex justify-center  gap-2 flex-wrap  '>
-      <div className=' md:w-[450px] w-[350px]  ' >
+      <div className=' md:w-[450px] w-[320px]  ' >
       <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
 <p className='  shadow-custom-dark bg-[#2c2c2c]  text-[#d3d3d3] p-4 rounded'>
           {content}

@@ -16,7 +16,7 @@ const MyCalendar = () => {
   ]);
 
   return (
-    <div className='p-4'>
+    <div className='p-4 w-full'>
       <Calendar
         localizer={localizer}
         events={events}
