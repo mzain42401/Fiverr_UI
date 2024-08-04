@@ -12,9 +12,9 @@ const EditData = () => {
   return (
     <>
       
-       <div className="flex justify-center items-center mt-4 w-full ">
-        <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] p-[2px] rounded">
-          <div className="bg-[#2c2c2c] p-6 rounded-lg shadow-lg w-96">
+       <div className="flex justify-center items-center m-auto mt-4  ">
+        <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8]  to-[#01fefc] p-[2px] w-[90%] lg:w-[40%] rounded">
+          <div className="bg-[#2c2c2c]  p-6 rounded-lg shadow-lg ">
             <div className="flex justify-center mb-4">
               <img
                 src={user.image}
