@@ -6,7 +6,8 @@ import { MdSpaceDashboard,MdEdit,MdTextSnippet  } from "react-icons/md";
 import { RiCalendarScheduleFill } from "react-icons/ri";
 import { FaSackDollar } from "react-icons/fa6";
 import { usePathname,  } from 'next/navigation'
-
+import Image from "next/image";
+import image from "../image/logo.png"
 
 
 
@@ -22,7 +23,12 @@ const Sidebar = ({ isOpen}) => {
     <div className={` fixed md:sticky inset-y-0 left-0 z-50  w-[226px] bg-[#2c2c2c] text-white transform  md:top-0 top-[56px]  ${isOpen ? 'translate-x-0 ' : '-translate-x-full'} transition-transform md:translate-x-0`}>
       <div className="flex flex-col h-full ">
         <div className='hidden md:block'>
-          <div className=' h-16 flex justify-center items-center gap-2'> <Link href="/">LOGO</Link>  </div>
+          <div className=' h-16 flex justify-center items-center  gap-2'> <Link href="/"><Image
+      src={image}
+      className="h-14 w-48 "
+      alt="Picture of the author"
+    /></Link>  </div>
+          
           </div>
         <div className="flex-1 p-4 space-y-1">
           <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">

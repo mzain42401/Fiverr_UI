@@ -92,7 +92,7 @@ const SubscriptionPlans = () => {
             <ul className="text-left">
               {plan.features.map((feature, i) => (
                 <li key={i} className="mb-2 border-t border-[#4a4a4a] py-3 flex justify-between gap-2 items-center text-[#d3d3d3]">
-                  {feature.available ?  <p className='text-3xl bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] inline-block text-transparent bg-clip-text'> ✔</p> : <p className='text-[#ff2f2f] text-2xl '>✖</p>} <p className='text-left  w-[90%]'>{feature.text}</p>
+                  {feature.available ?  <p className='text-3xl bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] inline-block text-transparent bg-clip-text'> ✔</p> : <p className='text-[#4b4b4b] text-2xl '>✖</p>} <p className='text-left  w-[90%]'>{feature.text}</p>
                 </li>
               ))} 
 
