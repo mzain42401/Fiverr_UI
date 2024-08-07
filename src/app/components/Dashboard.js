@@ -22,7 +22,7 @@ const Dashboard = ({children}) => {
       <header className="sticky p-4 h-[64px] flex justify-between md:justify-center items-center bg-[#2c2c2c]  text-white ">
           <div className='md:hidden flex justify-center items-center h-14   gap-2'> <Link href="/"><Image
       src={image}
-      className="h-12 w-40 "
+      className="h-12 w-24 "
       alt="Picture of the author"
     /></Link>  </div>
           

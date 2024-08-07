@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect, useRef } from 'react';
 import Dashboard from './Dashboard';
+import Checklist from './Checklist';
 
 const EditText = () => {
   const textareaRef = useRef(null);
@@ -22,8 +23,10 @@ textareaRef.current.style.height=textareaRef.current.scrollHeight + "px"
 
   return (
 <Dashboard>
+<div className='p-4'>
 
-<div className="bg-gradient-to-tr  from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px] pb- m-4">
+<div className="bg-gradient-to-tr  from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px] pb- m-4 ">
+
 <div className="bg-[#2c2c2c]  ">
       <textarea
         
@@ -33,10 +36,10 @@ textareaRef.current.style.height=textareaRef.current.scrollHeight + "px"
         placeholder="Type something..."
         rows="1"
         ref={textareaRef}
-      ></textarea>
+        ></textarea>
     </div>
            </div>
-
+        <Checklist/>
 
         <div className='px-4 mb-10 w-full  flex justify-end items-center' >
         <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
@@ -44,6 +47,7 @@ textareaRef.current.style.height=textareaRef.current.scrollHeight + "px"
       <button className='px-4 py-2  border-[#3a3a3a] border-solid border-2 rounded bg-[#2c2c2c]  text-[#d3d3d3]' onClick={uploadData}>Upload</button>
 </div>
       </div>
+</div>
       </Dashboard>
 
     

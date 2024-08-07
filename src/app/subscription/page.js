@@ -1,11 +1,6 @@
 // components/SubscriptionPlans.js
 import React from 'react';
 import Dashboard from '../components/Dashboard';
-import { FaGift } from "react-icons/fa6";
-import { FaStar } from "react-icons/fa";
-import { GiQueenCrown } from "react-icons/gi";
-import { MdGppGood } from "react-icons/md";
-import { IoIosRocket } from "react-icons/io";
 
 
 const plans = [
@@ -13,61 +8,61 @@ const plans = [
     name: 'Free',
     price: '£0/month',
     features: [
-      { text: 'Publish to x4 social media platform', available: true },
-      { text: 'Access to reporting', available: false },
-      { text: 'Email marketing campaign creation', available: false },
+      { text: 'Publish Across Four Social Media Platforms', available: true },
+      { text: 'In-Depth Reporting', available: false },
+      { text: 'Email Marketing Campaigns', available: false },
       { text: 'Blog content creation', available: false },
-      { text: 'SEO feature access', available: false },
+      { text: 'Advanced SEO Tools', available: false },
     ],
-    icon: <FaGift/>
+    icon: '🎀'
   },
   {
     name: 'Basic',
     price: '£5/month',
     features: [
-      { text: 'Publish to x4 social media platform', available: true },
-      { text: 'Access to reporting', available: true },
-      { text: 'Email marketing campaign creation', available: false },
+      { text: 'Publish Across Four Social Media Platforms', available: true },
+      { text: 'In-Depth Reporting', available: true },
+      { text: 'Email Marketing Campaigns', available: false },
       { text: 'Blog content creation', available: false },
-      { text: 'SEO feature access', available: false },
+      { text: 'Advanced SEO Tools', available: false },
     ],
-    icon: <FaStar/>
+    icon: '⭐'
   },
   {
     name: 'Advanced',
     price: '£10/month',
     features: [
-      { text: 'Publish to x4 social media platform', available: true },
-      { text: 'Access to reporting', available: true },
-      { text: 'Email marketing campaign creation', available: true },
+      { text: 'Publish Across Four Social Media Platforms', available: true },
+      { text: 'In-Depth Reporting', available: true },
+      { text: 'Email Marketing Campaigns', available: true },
       { text: 'Blog content creation', available: false },
-      { text: 'SEO feature access', available: false },
+      { text: 'Advanced SEO Tools', available: false },
     ],
-    icon: <IoIosRocket/>
+    icon: '✈️'
   },
   {
     name: 'Pro',
     price: '£15/month',
     features: [
-      { text: 'Publish to x4 social media platform', available: true },
-      { text: 'Access to reporting', available: true },
-      { text: 'Email marketing campaign creation', available: true },
+      { text: 'Publish Across Four Social Media Platforms', available: true },
+      { text: 'In-Depth Reporting', available: true },
+      { text: 'Email Marketing Campaigns', available: true },
       { text: 'Blog content creation', available: true },
-      { text: 'SEO feature access', available: false },
+      { text: 'Advanced SEO Tools', available: false },
     ],
-    icon: <GiQueenCrown/>
+    icon: '🚀'
   },
   {
     name: 'Enterprise',
     price: '£79/month',
     features: [
-      { text: 'Publish to x4 social media platform', available: true },
-      { text: 'Access to reporting', available: true },
-      { text: 'Email marketing campaign creation', available: true },
+      { text: 'Publish Across Four Social Media Platforms', available: true },
+      { text: 'In-Depth Reporting', available: true },
+      { text: 'Email Marketing Campaigns', available: true },
       { text: 'Blog content creation', available: true },
-      { text: 'SEO feature access', available: true },
+      { text: 'Advanced SEO Tools', available: true },
     ],
-    icon: <MdGppGood/>
+    icon: '👍'
   },
 ];
 
@@ -84,7 +79,7 @@ const SubscriptionPlans = () => {
 {plans.map((plan, index) => (
   <div key={index}  className=" m-4 bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
 <div className="text-center bg-[#2c2c2c]  shadow-lg rounded-lg p-6  w-72  ">
-            <h3 className="text-3xl flex justify-center items-center font-bold mb-2 text-[#ffd92e] ">{plan.icon} </h3>
+            <h3 className="text-3xl  font-bold mb-2 bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] inline-block text-transparent bg-clip-text ">{plan.icon} </h3>
             
             <h3 className="text-xl font-bold mb-2 ">{plan.name} </h3>
 

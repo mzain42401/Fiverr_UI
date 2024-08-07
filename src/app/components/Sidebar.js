@@ -25,7 +25,7 @@ const Sidebar = ({ isOpen}) => {
         <div className='hidden md:block'>
           <div className=' h-16 flex justify-center items-center  gap-2'> <Link href="/"><Image
       src={image}
-      className="h-14 w-48 "
+      className="h-14 w-28 "
       alt="Picture of the author"
     /></Link>  </div>
           
@@ -33,24 +33,24 @@ const Sidebar = ({ isOpen}) => {
         <div className="flex-1 p-4 space-y-1">
           <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
 
-         <Link href="/" className={`${path === "/" ? "text-[#e59dd8]" : "text-[#d3d3d3]"} p-2 bg-[#3a3a3a]  hover:bg-[#404040] hover:text-[#ffffff] rounded text-center flex justify-center items-center gap-2`}><MdSpaceDashboard /><p className=" text-left w-[85%]">Dashboard</p></Link>
+         <Link href="/" className={`${path === "/" ? "text-[#e59dd8]" : "text-[#d3d3d3]"} p-2 bg-[#3a3a3a]  hover:bg-[#404040] hover:text-[#ffffff] rounded text-center flex justify-center items-center gap-2`}> <p className="text-[#e59dd8]"><MdSpaceDashboard /></p> <p className=" text-left w-[85%]">Dashboard</p></Link>
            </div>
            <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
-             <Link href="/ideaGen" className={`${path === "/ideaGen" ? "text-[#e59dd8]" : "text-[#d3d3d3]"} p-2 bg-[#3a3a3a] text-[#d3d3d3]  hover:bg-[#404040] hover:text-[#ffffff] rounded text-center  flex justify-center items-center gap-2`}><HiLightBulb/> <p className=" text-left w-[85%]">Idea Generation</p></Link>
+             <Link href="/ideaGen" className={`${path === "/ideaGen" ? "text-[#e59dd8]" : "text-[#d3d3d3]"} p-2 bg-[#3a3a3a] text-[#d3d3d3]  hover:bg-[#404040] hover:text-[#ffffff] rounded text-center  flex justify-center items-center gap-2`}> <p className="text-[#e59dd8]"><HiLightBulb/></p> <p className=" text-left w-[85%]">Idea Generation</p></Link>
           
            </div>
            <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
-         <Link href="/contentGen" className={` ${path === "/contentGen" ? "text-[#e59dd8]" : "text-[#d3d3d3]"} p-2 bg-[#3a3a3a] text-[#d3d3d3]  hover:bg-[#404040] hover:text-[#ffffff] rounded text-center flex justify-center items-center gap-2`}><MdTextSnippet/><p className=" text-left w-[85%]">Content Generation</p></Link>   
+         <Link href="/contentGen" className={` ${path === "/contentGen" ? "text-[#e59dd8]" : "text-[#d3d3d3]"} p-2 bg-[#3a3a3a] text-[#d3d3d3]  hover:bg-[#404040] hover:text-[#ffffff] rounded text-center flex justify-center items-center gap-2`}> <p className="text-[#e59dd8]"><MdTextSnippet/></p> <p className=" text-left w-[85%]">Content Generation</p></Link>   
            </div>
            <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
-            <Link href="/editing" className={`${path === "/editing" ? "text-[#e59dd8]" : "text-[#d3d3d3]"} p-2 bg-[#3a3a3a] text-[#d3d3d3]  hover:bg-[#404040] hover:text-[#ffffff] rounded text-center flex justify-center items-center gap-2`}><MdEdit/><p className=" text-left w-[85%]">Editing</p></Link>
+            <Link href="/editing" className={`${path === "/editing" ? "text-[#e59dd8]" : "text-[#d3d3d3]"} p-2 bg-[#3a3a3a] text-[#d3d3d3]  hover:bg-[#404040] hover:text-[#ffffff] rounded text-center flex justify-center items-center gap-2`}> <p className="text-[#e59dd8]"><MdEdit/></p> <p className=" text-left w-[85%]">Editing</p></Link>
           
            </div>
            <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
-            <Link href="/schedule" className={`${path === "/schedule" ? "text-[#e59dd8]" : "text-[#d3d3d3]"} p-2 bg-[#3a3a3a] text-[#d3d3d3]  hover:bg-[#404040] hover:text-[#ffffff] rounded text-center flex justify-center items-center gap-2`}><RiCalendarScheduleFill/><p className=" text-left w-[85%]">Scheduling</p></Link>
+            <Link href="/schedule" className={`${path === "/schedule" ? "text-[#e59dd8]" : "text-[#d3d3d3]"} p-2 bg-[#3a3a3a] text-[#d3d3d3]  hover:bg-[#404040] hover:text-[#ffffff] rounded text-center flex justify-center items-center gap-2`}> <p className="text-[#e59dd8]"><RiCalendarScheduleFill/></p> <p className=" text-left w-[85%]">Scheduling</p></Link>
             </div>
             <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
-         <Link href="/subscription" className={`${path === "/subscription" ? "text-[#e59dd8]" : "text-[#d3d3d3]"} p-2 bg-[#3a3a3a] text-[#d3d3d3]  hover:bg-[#404040] hover:text-[#ffffff] rounded text-center flex justify-center items-center gap-2`}><FaSackDollar/><p className=" text-left w-[85%]">Subscription</p></Link>
+         <Link href="/subscription" className={`${path === "/subscription" ? "text-[#e59dd8]" : "text-[#d3d3d3]"} p-2 bg-[#3a3a3a] text-[#d3d3d3]  hover:bg-[#404040] hover:text-[#ffffff] rounded text-center flex justify-center items-center gap-2`}> <p className="text-[#e59dd8]"> <FaSackDollar/></p><p className=" text-left w-[85%]">Subscription</p></Link>
    
             </div>
           
@@ -58,10 +58,10 @@ const Sidebar = ({ isOpen}) => {
         </div>
         <div className="p-4 space-y-2 border-t border-gray-700">
         <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
-          <Link href="/setting" className={`${path === "/setting" ? "text-[#e59dd8]" : "text-[#d3d3d3]"} p-2 bg-[#3a3a3a] text-[#d3d3d3]  hover:bg-[#404040] hover:text-[#ffffff] rounded text-center flex justify-center items-center gap-2`}><IoMdSettings/><p className="bg-red-90 text-left w-[85%]">Settings</p></Link>  
+          <Link href="/setting" className={`${path === "/setting" ? "text-[#e59dd8]" : "text-[#d3d3d3]"} p-2 bg-[#3a3a3a] text-[#d3d3d3]  hover:bg-[#404040] hover:text-[#ffffff] rounded text-center flex justify-center items-center gap-2`}><p className="text-[#e59dd8]"><IoMdSettings/></p><p className="bg-red-90 text-left w-[85%]">Settings</p></Link>  
             </div>
             <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
-           <Link href="/help" className={`${path === "/help" ? "text-[#e59dd8]" : "text-[#d3d3d3]"} p-2 bg-[#3a3a3a] text-[#d3d3d3]  hover:bg-[#404040] hover:text-[#ffffff] rounded text-center flex justify-center items-center gap-2`}><IoMdHelpCircle/><p className=" text-left w-[85%]">Help</p></Link>
+           <Link href="/help" className={`${path === "/help" ? "text-[#e59dd8]" : "text-[#d3d3d3]"} p-2 bg-[#3a3a3a] text-[#d3d3d3]  hover:bg-[#404040] hover:text-[#ffffff] rounded text-center flex justify-center items-center gap-2`}><p className="text-[#e59dd8]"><IoMdHelpCircle/></p><p className=" text-left w-[85%]">Help</p></Link>
            
             </div>
         </div>
