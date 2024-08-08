@@ -13,8 +13,16 @@ const WebsiteChart = () => {
       {
         label: 'Website Metrics',
         data: [65, 59, 80],
-        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        borderColor: 'rgba(255, 99, 132, 1)',
+        backgroundColor: [
+          'rgba(201, 243, 191, 0.2)', // Light green for Lead Source A
+          'rgba(229, 157, 216, 0.2)', // Light pink for Lead Source B
+          'rgba(1, 254, 252, 0.2)'   // Light cyan for Lead Source C
+        ],
+        borderColor: [
+          'rgba(201, 243, 191, 1)',  // Green for Lead Source A
+          'rgba(229, 157, 216, 1)',  // Pink for Lead Source B
+          'rgba(1, 254, 252, 1)'     // Cyan for Lead Source C
+        ],
         borderWidth: 1,
       },
    

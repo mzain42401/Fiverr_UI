@@ -13,8 +13,16 @@ const LeadChart = () => {
       {
         label: 'Lead',
         data: [65, 59,67],
-        backgroundColor: 'rgb(201, 243, 191,0.2)',
-        borderColor: 'rgb(201, 243, 191,1)',
+        backgroundColor: [
+          'rgba(201, 243, 191, 0.2)', // Light green for Lead Source A
+          'rgba(229, 157, 216, 0.2)', // Light pink for Lead Source B
+          'rgba(1, 254, 252, 0.2)'   // Light cyan for Lead Source C
+        ],
+        borderColor: [
+          'rgba(201, 243, 191, 1)',  // Green for Lead Source A
+          'rgba(229, 157, 216, 1)',  // Pink for Lead Source B
+          'rgba(1, 254, 252, 1)'     // Cyan for Lead Source C
+        ],
         borderWidth: 1,
       },
       
