@@ -26,6 +26,7 @@ const Dashboard = ({children}) => {
       className="h-12 w-24 "
       alt="Picture of the author"
     /></Link>  </div>
+    <div className='flex justify-center items-center gap-2'>
           <div className="relative ">
           <img
           src="https://via.placeholder.com/150" // Replace with your user image path
@@ -40,7 +41,7 @@ const Dashboard = ({children}) => {
             </Link>
             <Link href="/login">
             <button
-              // Replace with your logout logic
+              onClick={() => alert('Logout')} // Replace with your logout logic
               className="block px-4 py-2 text-[#d3d3d3] hover:bg-[#4f4f4f] w-full text-left"
               >
               Logout
@@ -54,6 +55,7 @@ const Dashboard = ({children}) => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={sidebarOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}></path>
             </svg>
           </button>
+          </div>
         </header>
         <main className="flex-1 overflow-y-auto bg-[#1e1e1e]">
         {children}
