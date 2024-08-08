@@ -43,7 +43,7 @@ const Dashboard = ({children}) => {
             </Link>
             <Link href="/login">
             <button
-              onClick={() => alert('Logout')} // Replace with your logout logic
+            // Replace with your logout logic
               className="block px-4 py-2 text-[#d3d3d3] hover:bg-[#4f4f4f] w-full text-left"
               >
               Logout
