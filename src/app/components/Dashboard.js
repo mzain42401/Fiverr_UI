@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Sidebar from './Sidebar';
 import { useState } from 'react';
 import image from '../image/logo.png'
-import image2 from '../image/person.jpg'
 import { IoPerson } from "react-icons/io5";
 
 
@@ -28,7 +27,7 @@ const Dashboard = ({children}) => {
           <div className='md:hidden flex justify-center items-center h-14   gap-2'> <Link href="/"><Image
       src={image}
       className="h-12 w-24 "
-      alt="Picture of the author"
+      alt="logo"
     /></Link>  </div>
     <div className='flex justify-center items-center gap-2'>
           <div className="relative  ">
