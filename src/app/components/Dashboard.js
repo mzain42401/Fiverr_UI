@@ -2,8 +2,11 @@
 import Link from 'next/link';
 import Sidebar from './Sidebar';
 import { useState } from 'react';
-import Image from 'next/image';
 import image from '../image/logo.png'
+import image2 from '../image/person.jpg'
+
+
+import Image from 'next/image';
 const Dashboard = ({children}) => {
     
 
@@ -31,7 +34,7 @@ const Dashboard = ({children}) => {
             <div onClick={() => setDropdownOpen(!dropdownOpen)}>
 
           <Image
-          src="https://via.placeholder.com/150" // Replace with your user image path
+          src={image2} // Replace with your user image path
           alt="User"
           className="w-10 h-10 rounded-full cursor-pointer"
           
