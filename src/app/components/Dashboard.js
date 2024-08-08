@@ -4,6 +4,7 @@ import Sidebar from './Sidebar';
 import { useState } from 'react';
 import image from '../image/logo.png'
 import image2 from '../image/person.jpg'
+import { IoPerson } from "react-icons/io5";
 
 
 import Image from 'next/image';
@@ -31,14 +32,10 @@ const Dashboard = ({children}) => {
     /></Link>  </div>
     <div className='flex justify-center items-center gap-2'>
           <div className="relative  ">
-            <div onClick={() => setDropdownOpen(!dropdownOpen)}>
+            <div className="w-10 h-10 bg-[#3c3c3c] text-3xl flex justify-center items-center rounded-full cursor-pointer" onClick={() => setDropdownOpen(!dropdownOpen)}>
 
-          <Image
-          src={image2} // Replace with your user image path
-          alt="User"
-          className="w-10 h-10 rounded-full cursor-pointer"
+<IoPerson/>
           
-          />
           </div>
         {dropdownOpen && (
           <div className="absolute right-0 mt-2 w-32 bg-[#2c2c2c] rounded-md shadow-lg py-2 z-20">
