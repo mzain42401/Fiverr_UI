@@ -28,12 +28,15 @@ const Dashboard = ({children}) => {
     /></Link>  </div>
     <div className='flex justify-center items-center gap-2'>
           <div className="relative  ">
-          <img
+            <div onClick={() => setDropdownOpen(!dropdownOpen)}>
+
+          <Image
           src="https://via.placeholder.com/150" // Replace with your user image path
           alt="User"
           className="w-10 h-10 rounded-full cursor-pointer"
-          onClick={() => setDropdownOpen(!dropdownOpen)}
-        />
+          
+          />
+          </div>
         {dropdownOpen && (
           <div className="absolute right-0 mt-2 w-32 bg-[#2c2c2c] rounded-md shadow-lg py-2 z-20">
             <Link href="/setting">

@@ -1,6 +1,7 @@
 "use client"
 import Link from 'next/link';
 import React, { useState } from 'react'
+import Image from 'next/image';
 
 const EditData = () => {
     const [user, setUser] = useState({
@@ -16,7 +17,7 @@ const EditData = () => {
         <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8]  to-[#01fefc] p-[2px] w-[90%] lg:w-[40%] rounded">
           <div className="bg-[#2c2c2c]  p-6 rounded-lg shadow-lg ">
             <div className="flex justify-center mb-4">
-              <img
+              <Image
                 src={user.image}
                 alt="User"
                 className="rounded-full w-32 h-32 object-cover"
