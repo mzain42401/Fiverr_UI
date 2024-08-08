@@ -27,7 +27,7 @@ const Dashboard = ({children}) => {
       alt="Picture of the author"
     /></Link>  </div>
     <div className='flex justify-center items-center gap-2'>
-          <div className="relative ">
+          <div className="relative block md:hidden ">
           <img
           src="https://via.placeholder.com/150" // Replace with your user image path
           alt="User"
