@@ -4,8 +4,6 @@ import { format, addMonths, subMonths, startOfMonth, endOfMonth, startOfWeek, en
 import { Dialog, DialogPanel , DialogTitle} from '@headlessui/react';
 
 
-import { Fragment } from 'react';
-import Link from 'next/link';
 
 const MyCalendar = () => {
   const [currentMonth, setCurrentMonth] = useState(new Date());
