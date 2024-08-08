@@ -6,7 +6,10 @@ const page = () => {
   return (
     <>
       <Dashboard>
+        <div>
+
         <MyCalendar/>
+        </div>
       </Dashboard>
     </>
   )
