@@ -2,7 +2,7 @@ import React from 'react'
 import Dashboard from '../components/Dashboard'
 
 const page = () => {
-  const content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum ex maxime odit ipsum, quod, sed obcaecati distinctio, aperiam doloremque quia doloribus voluptatibus ducimus. Vero est nam vitae quam, suscipit provident?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum ex maxime odit ipsum, quod, sed obcaecati distinctio, aperiam doloremque quia doloribus voluptatibus ducimus. Vero est nam vitae quam, suscipit provident?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum ex maxime odit ipsum, quod, sed obcaecati distinctio, aperiam doloremque quia doloribus voluptatibus ducimus. Vero est nam vitae quam, suscipit provident?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum ex maxime odit ipsum, quod, sed obcaecati distinctio, aperiam doloremque quia doloribus voluptatibus ducimus. Vero est nam vitae quam, suscipit provident?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum ex maxime odit ipsum, quod, sed obcaecati distinctio, aperiam doloremque quia doloribus voluptatibus ducimus. Vero est nam vitae quam, suscipit provident?"
+  
   return (
     <>
     <Dashboard>
@@ -13,7 +13,7 @@ const page = () => {
       <div >
       <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
 <div className=' w-full' >
-      <input type="text"  placeholder='Enter your prompt here ...' className="bg-[#2c2c2c]  border-2 shadow-custom-dark w-full  border-none   p-2 text-base rounded outline-none"  name="" id="" />
+      <input type="text"  placeholder='Enter your business, brand voice, goals, target audience and mission here ...' className="bg-[#2c2c2c]  border-2 shadow-custom-dark w-full  border-none   p-2 text-base rounded outline-none"  name="" id="" />
       </div>
 </div>
       
@@ -28,16 +28,16 @@ const page = () => {
       </div>
       </div>
 
-      {content?<div>
+      <div>
       <div className=' w-full  ' >
-      <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
-<p className='  shadow-custom-dark bg-[#2c2c2c]  text-[#d3d3d3] p-4 rounded'>
-          {content}
+      <div className=" bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
+<p className='  h-[300px] overflow-y-auto shadow-custom-dark bg-[#2c2c2c]  text-[#d3d3d3] p-4 rounded'>
+Take data from above box to generate topics for content calendar...... 
         </p>
 </div>
         
       </div>
-      </div>:null}
+      </div>
 
     </div>
 

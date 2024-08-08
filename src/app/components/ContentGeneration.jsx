@@ -1,35 +1,16 @@
 "use client"
-import { useState, useEffect, useRef } from 'react';
-import Dashboard from './Dashboard';
-import Checklist from './Checklist';
+import React, { useState } from 'react'
+import Dashboard from '../components/Dashboard'
+import Link from 'next/link'
 
-const EditText = () => {
-  const [roll,setRoll]=useState('free')
-  const [checklist,setChecklist]=useState(false)
-
-  // const textareaRef = useRef(null);
-  // const [val, setVal] = useState("Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum ex maxime odit ipsum, quod, sed obcaecati distinctio, aperiam doloremque quia doloribus voluptatibus ducimus. Vero est nam vitae quam, suscipit provident?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum ex maxime odit ipsum, quod, sed obcaecati distinctio, aperiam doloremque quia doloribus voluptatibus ducimus. Vero est nam vitae quam, suscipit provident?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum ex maxime odit ipsum, quod, sed obcaecati distinctio, aperiam doloremque quia doloribus voluptatibus ducimus. Vero est nam vitae quam, suscipit provident?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum ex maxime odit ipsum, quod, sed obcaecati distinctio, aperiam doloremque quia doloribus voluptatibus ducimus. Vero est nam vitae quam, suscipit provident?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum ex maxime odit ipsum, quod, sed obcaecati distinctio, aperiam doloremque quia doloribus voluptatibus ducimus. Vero est nam vitae quam, suscipit provident?");
-
-  
-
-//   const handle = (e) => {
-//     setVal(e.target.value)
-//   };
-//   const uploadData=()=>{
-// console.log(val)
-//   }
-//   useEffect(()=>{
-// textareaRef.current.style.height="auto"
-// textareaRef.current.style.height=textareaRef.current.scrollHeight + "px"
-
-//   },[val])
-
+const ContentGeneration = () => {
+    const [roll,setRoll]=useState('free')
+ 
   return (
-<Dashboard>
-<div className='p-4'>
-<h1 className="font-bold text-[30px] pl-4 pt-4">Editing</h1>
-
-<div className='flex justify-center items-center gap-6 '>
+    <>
+    <Dashboard>
+    <h1 className="font-bold text-[30px] pl-4 pt-4">Content Generation</h1>
+    <div className='flex justify-center items-center gap-6 '>
       <div className={`hover:cursor-pointer hover:text-[#c9f3bf] ${roll==='free'?"border-t":null}`} onClick={()=>setRoll('free')}>Free</div>
       <div className={`hover:cursor-pointer hover:text-[#c9f3bf] ${roll==='advance'?"border-t":null}`} onClick={()=>setRoll('advance')}>Advance</div>
       <div className={`hover:cursor-pointer hover:text-[#c9f3bf] ${roll==='pro'?"border-t":null}`} onClick={()=>setRoll('pro')}>Pro</div>
@@ -57,12 +38,9 @@ const EditText = () => {
 {roll==='free'?<div className='flex justify-center  gap-2 flex-wrap  '>
       <div className=' md:w-[450px] w-[320px]  ' >
       <div className=" bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
-        <div className='bg-[#2c2c2c] '>
-<textarea className='  h-[295px] w-full bg-transparent resize-none outline-none  overflow-y-auto shadow-custom-dark  text-[#d3d3d3] p-4 rounded'>
+<p className='  h-[300px] overflow-y-auto shadow-custom-dark bg-[#2c2c2c]  text-[#d3d3d3] p-4 rounded'>
 Chat GPT Generates Copy for Social Media
-        </textarea>
-
-        </div>
+        </p>
 </div>
         
       </div>
@@ -85,23 +63,17 @@ Chat GPT Generates Copy for Social Media
       <div className=' md:w-[450px] w-[320px] flex justify-center items-center flex-col gap-2' >
       <div className=' md:w-[450px] w-[320px]' >
       <div className=" bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
-        <div className='bg-[#2c2c2c] '>
-<textarea className='  h-[295px] w-full bg-transparent resize-none outline-none  overflow-y-auto shadow-custom-dark  text-[#d3d3d3] p-4 rounded'>
+<p className='  h-[300px] overflow-y-auto shadow-custom-dark bg-[#2c2c2c]  text-[#d3d3d3] p-4 rounded'>
 Chat GPT Generates Copy for Social Media
-        </textarea>
-
-        </div>
+        </p>
 </div>
         
       </div>
       <div className=' md:w-[450px] w-[320px]' >
       <div className=" bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
-        <div className='bg-[#2c2c2c] '>
-<textarea className='  h-[295px] w-full bg-transparent resize-none outline-none  overflow-y-auto shadow-custom-dark  text-[#d3d3d3] p-4 rounded'>
+<p className='  h-[300px] overflow-y-auto shadow-custom-dark bg-[#2c2c2c]  text-[#d3d3d3] p-4 rounded'>
 Chat GPT Generates Copy for  Email Campaign
-        </textarea>
-
-        </div>
+        </p>
 </div>
         
       </div>
@@ -127,34 +99,23 @@ Chat GPT Generates Copy for  Email Campaign
       <div className=' md:w-[450px] w-[320px] flex justify-center items-center flex-col gap-2' >
       <div className=' md:w-[450px] w-[320px]' >
       <div className=" bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
-        <div className='bg-[#2c2c2c] '>
-<textarea className='  h-[295px] w-full bg-transparent resize-none outline-none  overflow-y-auto shadow-custom-dark  text-[#d3d3d3] p-4 rounded'>
+<p className='  h-[300px] overflow-y-auto shadow-custom-dark bg-[#2c2c2c]  text-[#d3d3d3] p-4 rounded'>
 Chat GPT Generates Copy for Social Media
-        </textarea>
-
-        </div>
+        </p>
 </div>
         
       </div>
       <div className=' md:w-[450px] w-[320px]' >
       <div className=" bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
-        <div className='bg-[#2c2c2c] '>
-<textarea className='  h-[295px] w-full bg-transparent resize-none outline-none  overflow-y-auto shadow-custom-dark  text-[#d3d3d3] p-4 rounded'>
-Chat GPT Generates Copy for  Email Campaign      
-        </textarea>
-
-        </div>
+<p className='  h-[300px] overflow-y-auto shadow-custom-dark bg-[#2c2c2c]  text-[#d3d3d3] p-4 rounded'>
+Chat GPT Generates Copy for  Email Campaign        </p>
 </div>
         
       </div>
       <div className=' md:w-[450px] w-[320px]' >
       <div className=" bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
-        <div className='bg-[#2c2c2c] '>
-<textarea className='  h-[295px] w-full bg-transparent resize-none outline-none  overflow-y-auto shadow-custom-dark  text-[#d3d3d3] p-4 rounded'>
-Chat GPT Generates Copy for  Blog   
-        </textarea>
-
-        </div>
+<p className='  h-[300px] overflow-y-auto shadow-custom-dark bg-[#2c2c2c]  text-[#d3d3d3] p-4 rounded'>
+Chat GPT Generates Copy for  Blog        </p>
 </div>
         
       </div>
@@ -181,35 +142,27 @@ Chat GPT Generates Copy for  Blog
       <div className=' md:w-[450px] w-[320px] flex justify-center items-center flex-col gap-2' >
       <div className=' md:w-[450px] w-[320px]' >
       <div className=" bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
-        <div className='bg-[#2c2c2c] '>
-<textarea className='  h-[295px] w-full bg-transparent resize-none outline-none  overflow-y-auto shadow-custom-dark  text-[#d3d3d3] p-4 rounded'>
+<p className='  h-[300px] overflow-y-auto shadow-custom-dark bg-[#2c2c2c]  text-[#d3d3d3] p-4 rounded'>
 Chat GPT Generates Copy for Social Media
-        </textarea>
-
-        </div>
+        </p>
 </div>
         
       </div>
       <div className=' md:w-[450px] w-[320px]' >
       <div className=" bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
-        <div className='bg-[#2c2c2c] '>
-<textarea className='  h-[295px] w-full bg-transparent resize-none outline-none  overflow-y-auto shadow-custom-dark  text-[#d3d3d3] p-4 rounded'>
+<p className='  h-[300px] overflow-y-auto shadow-custom-dark bg-[#2c2c2c]  text-[#d3d3d3] p-4 rounded'>
 Chat GPT Generates Copy for  Email Campaign
-        </textarea>
-
-        </div>
+        </p>
 </div>
         
       </div>
       <div className=' md:w-[450px] w-[320px]' >
       <div className=" bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
-        <div className='bg-[#2c2c2c] '>
-<textarea className='  h-[295px] w-full bg-transparent resize-none outline-none  overflow-y-auto shadow-custom-dark  text-[#d3d3d3] p-4 rounded'>
+<p className='  h-[300px] overflow-y-auto shadow-custom-dark bg-[#2c2c2c]  text-[#d3d3d3] p-4 rounded'>
 Chat GPT Generates Copy for Social Media
-        </textarea>
-
-        </div>
+        </p>
 </div>
+        
       </div>
      
 
@@ -229,14 +182,21 @@ Chat GPT Generates Copy for Social Media
 
     </div>
 
-        <Checklist/>
 
-        
+
+<Link href="/editing">
+<div className='flex justify-end items-center px-4 mb-10'>
+
+    <div className=" w-max flex justify-between bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
+
+<button className='px-4 py-2  rounded bg-[#3a3a3a]  text-[#d3d3d3]'>Next</button>
 </div>
-      </Dashboard>
+</div>
+</Link>
 
-    
-  );
-};
+    </Dashboard>
+    </>
+  )
+}
 
-export default EditText;
+export default ContentGeneration

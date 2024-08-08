@@ -1,8 +1,11 @@
 "use client"
 import { useState } from 'react';
 import { format, addMonths, subMonths, startOfMonth, endOfMonth, startOfWeek, endOfWeek, addDays, isSameMonth, isSameDay } from 'date-fns';
-import { Dialog, Transition } from '@headlessui/react';
+import { Dialog, Transition,DialogPanel , DialogTitle} from '@headlessui/react';
+
+
 import { Fragment } from 'react';
+import Link from 'next/link';
 
 const MyCalendar = () => {
   const [currentMonth, setCurrentMonth] = useState(new Date());
@@ -61,7 +64,7 @@ const MyCalendar = () => {
         days.push(
           <div
             className={`flex-1 border p-2  text-center cursor-pointer ${!isSameMonth(day, monthStart)
-              ? "bg-gray-100"
+              ? "bg-[#2c2c2c]"
               : isSameDay(day, selectedDate) ? " text-white" : "hover:bg-[#3c3c3c]"
               }`}
             key={day}
@@ -69,9 +72,12 @@ const MyCalendar = () => {
           >
             <span>{formattedDate}</span>
             {eventForDay.map((event, index) => (
-              <div key={index} className="mt-1 text-sm bg-[#2c2c2c] rounded p-1">
+        <div key={index} className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
+          <div  className="py-[2px] text-sm bg-[#2c2c2c] rounded ">
                 {event}
               </div>
+          </div>
+              
             ))}
           </div>
         );
@@ -127,67 +133,100 @@ const MyCalendar = () => {
       {renderDays()}
       {renderCells()}
       
-      <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-black bg-opacity-25" />
-          </Transition.Child>
+      <Dialog open={isOpen} as="div" className="relative z-10 focus:outline-none" onClose={close}>
+        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <DialogPanel
+              transition
+              className="w-full max-w-md rounded-xl bg-[#3a3a3a] p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
+            >
+              <DialogTitle as="h3" className="text-base/7 font-medium text-white">
+              Please check over your content before publishing:
+              </DialogTitle>
+              <div className=" p-6 rounded-lg ">
 
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                  <Dialog.Title
-                    as="h3"
-                    className="text-lg text-[#2c2c2c] font-medium leading-6 "
-                  >
-                    Set Event
-                  </Dialog.Title>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      className="w-full text-black border rounded p-2"
-                      placeholder="Event Name"
-                      value={eventName}
-                      onChange={handleEventNameChange}
-                    />
-                  </div>
-                  <div className="mt-4">
-                    <button
-                      type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-[#2c2c2c] px-4 py-2 text-sm font-medium text-white hover:bg-[#3c3c3c]"
-                      onClick={saveEvent}
-                    >
-                      Save
-                    </button>
-                  </div>
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
+            
+        <div className="space-y-2">
+        <label className="flex items-center justify-between">
+            <span className="mr-2 text-base">Event Name</span>
+            <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
+
+<input value={eventName}
+                      onChange={handleEventNameChange} required placeholder='set event name' type="text" id="email" name="email" class="w-full bg-[#3a3a3a]   rounded text-base outline-none text-[#d3d3d3]  px-3 leading-8 transition-colors duration-200 ease-in-out" />
+</div>
+           
+          </label>
+        <label className="flex items-center justify-between">
+            <span className="mr-2 text-base">Facebook</span>
+            <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
+
+<input required placeholder='Account URL' type="text" id="email" name="email" class="w-full bg-[#3a3a3a]   rounded text-base outline-none text-[#d3d3d3]  px-3 leading-8 transition-colors duration-200 ease-in-out" />
+</div>
+           
+          </label>
+          
+          <label className="flex items-center justify-between">
+            <span className="mr-2 text-base">LinkedIn</span>
+            <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
+
+<input required placeholder='Account URL'  type="text" id="email" name="email" class="w-full bg-[#3a3a3a]   rounded text-base outline-none text-[#d3d3d3]   px-3 leading-8 transition-colors duration-200 ease-in-out" />
+</div>
+           
+          </label>
+          
+          <label className="flex items-center justify-between  ">
+            <span className="mr-2 text-base">Instagram</span>
+            <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
+
+<input required placeholder='Account URL' type="text" id="email" name="email" class="w-full bg-[#3a3a3a]   rounded text-base outline-none text-[#d3d3d3]  px-3 leading-8 transition-colors duration-200 ease-in-out" />
+</div>
+           
+          </label>
+          
+          <label className="flex items-center justify-between">
+            <span className="mr-2 text-base">X</span>
+            <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
+
+<input required placeholder='Account URL' type="text" id="email" name="email" class="w-full bg-[#3a3a3a]   rounded text-base outline-none text-[#d3d3d3]  px-3 leading-8 transition-colors duration-200 ease-in-out" />
+</div>
+           
+          </label>
+          
+        </div>
+        
+      </div>
+      <div className='flex justify-between items-center'>
+      <div className="mt-4 " onClick={()=>setIsOpen(!isOpen)}>
+              <div className='px-4  w-max' >
+        <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
+
+      <button className='px-4 py-2  border-[#3a3a3a] border-solid border-2 rounded bg-[#2c2c2c]  text-[#d3d3d3]' >Cancle</button>
+</div>
+      </div>
+              </div>
+              <div className="mt-4 " onClick={saveEvent}>
+              <div className='px-4  w-max' >
+        <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
+
+      <button className='px-4 py-2  border-[#3a3a3a] border-solid border-2 rounded bg-[#2c2c2c]  text-[#d3d3d3]' >Save</button>
+</div>
+      </div>
+              </div>
+      </div>
+              
+            </DialogPanel>
           </div>
-        </Dialog>
-      </Transition>
+        </div>
+      </Dialog>
     </div>
   );
 };
 
 export default MyCalendar;
+
+
+
+
 
 
 

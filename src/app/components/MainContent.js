@@ -1,7 +1,14 @@
-import LineChart from "./graphs/LineChart";
-import PieChart from "./graphs/PieChart";
-import BarChart from  "./graphs/Barchart"
-import DoughnutChart from "./graphs/DoughnutChart";
+import EmailCompaign from "./graphs/EmailCompaign";
+import SocialMediaChart from  "./graphs/SocialMediaChart"
+import BudgetChart from "./graphs/BudgetChart";
+import WebsiteChart from "./graphs/WebsiteChart";
+import SEOChart from "./graphs/SEOChart";
+import WebTrafficChart from "./graphs/WebTrafficChart";
+import LeadChart from "./graphs/LeadChart";
+import ConversationChart from "./graphs/ConversationChart";
+
+
+
 
 const MainContent = () => {
   return (
@@ -11,36 +18,51 @@ const MainContent = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         
       <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
-<div  className="bg-[#2c2c2c] border-2 shadow-custom-dark border-[#3a3a3a] border-solid p-4 rounded ">
-       <BarChart/>
+<div  className=" bg-[#2c2c2c] border-2 shadow-custom-dark border-[#3a3a3a] border-solid p-4 rounded ">
+       <SocialMediaChart/>
       </div>
            </div>
       
            <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
 <div  className="bg-[#2c2c2c] border-2 shadow-custom-dark border-[#3a3a3a] border-solid p-4 rounded ">
-        <LineChart/>
+        <EmailCompaign/>
       </div>
-</div>
+</div> 
       
 <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
 <div  className="bg-[#2c2c2c] border-2 shadow-custom-dark border-[#3a3a3a] border-solid p-4 rounded ">
-        <PieChart/>
+<WebsiteChart/>
+
       </div>
            </div>
       
            <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
 <div  className="bg-[#2c2c2c] border-2 shadow-custom-dark border-[#3a3a3a] border-solid p-4 rounded ">
-       <DoughnutChart/>
+  <SEOChart/>
       </div>
 </div>
 <div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
 <div  className="bg-[#2c2c2c] border-2 shadow-custom-dark border-[#3a3a3a] border-solid p-4 rounded ">
-       <BarChart/>
+      <WebTrafficChart/>
+      </div>
+</div>
+<div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
+<div  className="bg-[#2c2c2c] border-2 shadow-custom-dark border-[#3a3a3a] border-solid p-4 rounded ">
+      <BudgetChart/>
       </div>
 </div>
       
-     
-      
+<div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
+<div  className="bg-[#2c2c2c] border-2 shadow-custom-dark border-[#3a3a3a] border-solid p-4 rounded ">
+      <LeadChart/>
+      </div>
+</div>
+<div className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
+<div  className="bg-[#2c2c2c] border-2 shadow-custom-dark border-[#3a3a3a] border-solid p-4 rounded ">
+      <ConversationChart/>
+      </div>
+</div>
+
       </div>
     </div>
     </>

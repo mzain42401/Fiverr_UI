@@ -26,14 +26,7 @@ const Settings = () => {
                     Mickael Poulaz
                 </dd>
             </div>
-            <div class="bg-[#2c2c2c] border-t-[.2px]  px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-[#d3d3d3]">
-                    Best techno
-                </dt>
-                <dd class="mt-1 text-sm text-[#d3d3d3] sm:mt-0 sm:col-span-2">
-                    React JS
-                </dd>
-            </div>
+           
             <div class="bg-[#2c2c2c] border-t-[.2px]  px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt class="text-sm font-medium text-[#d3d3d3]">
                     Email address
@@ -44,20 +37,13 @@ const Settings = () => {
             </div>
             <div class="bg-[#2c2c2c] border-t-[.2px]  px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt class="text-sm font-medium text-[#d3d3d3]">
-                    Palne
+                    Password
                 </dt>
                 <dd class="mt-1 text-sm text-[#d3d3d3] sm:mt-0 sm:col-span-2">
-                    $10,000
+xxxxx
                 </dd>
             </div>
-            <div class=" rounded-b bg-[#2c2c2c] border-t-[.2px]  px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-[#d3d3d3]">
-                    About
-                </dt>
-                <dd class="mt-1 text-sm text-[#d3d3d3] sm:mt-0 sm:col-span-2">
-                    To get social media testimonials like these, keep your customers engaged with your social media accounts by posting regularly yourself
-                </dd>
-            </div>
+           
         </dl>
     </div>
     <div className=" flex justify-end rounded p-[2px]">
