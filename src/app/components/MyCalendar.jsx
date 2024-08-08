@@ -64,17 +64,17 @@ const MyCalendar = () => {
         const eventForDay = events[format(cloneDay, 'yyyy-MM-dd')] || [];
         days.push(
           <div
-            className={`flex-1 border p-2 text-center cursor-pointer ${!isSameMonth(day, monthStart)
-              ? "bg-[#2c2c2c]"
-              : isSameDay(day, selectedDate) ? " text-white" : "hover:bg-[#3c3c3c]"
+            className={`m-[2px] flex-1 border overflow-visible  text-center cursor-pointer border-gradient ${!isSameMonth(day, monthStart)
+              ? "bg-[#3c3c3c]"
+              : isSameDay(day, selectedDate) ? " text-white" : "hover:bg-[#fff]"
               }`}
             key={day}
             onClick={() => onDateClick(cloneDay)}
           >
-            <span>{formattedDate}</span>
+            <span className=''>{formattedDate}</span>
             {eventForDay.map((event, index) => (
-              <div key={index} className="bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
-                <div className="py-[2px] text-sm bg-[#2c2c2c] rounded">
+              <div key={index} className="m-[2px] bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] rounded p-[2px]">
+                <div className="py-[2px]  text-sm bg-[#2c2c2c] rounded">
                   {event}
                 </div>
               </div>
