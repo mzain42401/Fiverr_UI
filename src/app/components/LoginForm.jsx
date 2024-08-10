@@ -1,22 +1,22 @@
 "use client"
-import React, { useState } from 'react'
-// import {getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword} from "firebase/auth"
+import React, { useEffect, useState } from 'react'
+import {getAuth,onAuthStateChanged,signInWithEmailAndPassword} from "firebase/auth"
 import { useRouter } from 'next/navigation'
-// import {app} from '../../../firebase/credentials'
-// import Swal from 'sweetalert2'
+import {app} from '../../../firebase/credentials'
+import Swal from 'sweetalert2'
 import Link from 'next/link'
-// const myAuth=getAuth(app)
+const myAuth=getAuth(app)
 
 
 
 
 const LoginForm = () => {
 
-  const [username,setusername]=useState()
   const [useremail,setuseremail]=useState()
   const [userpassword,setuserpassword]=useState()
   const [LoginError,setLoginError]=useState(null)
   const router = useRouter()
+  const auth = getAuth(app);
 
   
   
@@ -24,29 +24,43 @@ const LoginForm = () => {
   const formsubmited=(e)=>{
 e.preventDefault()
 
-//   signInWithEmailAndPassword(myAuth, useremail, userpassword)
-//   .then((userCredential) => {
-//     Swal.fire({
-//       position: "top-end",
-//       icon: "success",
-//       title: "Your are successfully  Logged In",
-//       showConfirmButton: false,
-//       timer: 1500
-//     });
-//   router.push('/')
+  signInWithEmailAndPassword(myAuth, useremail, userpassword)
+  .then((userCredential) => {
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Your are successfully  Logged In",
+      showConfirmButton: false,
+      timer: 1500
+    });
+  router.push('/')
 
-//     // ...
-//   })
-//   .catch((error) => {
-//     const errorMessage = error.message;
-//     if (errorMessage==="Firebase: Error (auth/invalid-credential)."){
-// setLoginError("Invalid email or password")
-// setTimeout(()=>setLoginError(null), 5000);
+    // ...
+  })
+  .catch((error) => {
+    const errorMessage = error.message;
+    if (errorMessage==="Firebase: Error (auth/invalid-credential)."){
+setLoginError("Invalid email or password")
+setTimeout(()=>setLoginError(null), 5000);
 
-//     }
-//   });
+    }
+  });
   }
-
+  useEffect(() => {
+    const checkAuth = onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        router.push("/login")
+      } 
+      if (user) {
+        
+        router.push("/")
+      }
+      
+    });
+  
+    // Cleanup subscription on unmount
+    return () => checkAuth();
+  }, []);
   
   return (
     <>
@@ -76,7 +90,7 @@ e.preventDefault()
 
 
       </div>
-      <button type='submit' class=" w-full bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] hover:bg-gradient-to-bl hover:from-[#c9f3bf] hover:via-[#e59dd8] hover:to-[#01fefc]  py-2 px-8  rounded text-lg  text-black">Login</button>
+      <button type='submit' class="w-full bg-gradient-to-tr from-[#c9f3bf] via-[#e59dd8] to-[#01fefc] hover:bg-gradient-to-bl hover:from-[#c9f3bf] hover:via-[#e59dd8] hover:to-[#01fefc]  py-2 px-8  rounded text-lg  text-black">Login</button>
       
       <p class="text-xs text-center text-[#d3d3d3] mt-3">Have an account? <Link  className='text-[#01fefc]' href='/signup'>Signup</Link> </p>
 </form>

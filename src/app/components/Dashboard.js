@@ -1,22 +1,46 @@
 "use client"
 import Link from 'next/link';
 import Sidebar from './Sidebar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import image from '../image/logo.png'
 import { IoPerson } from "react-icons/io5";
-
-
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import {app} from '../../../firebase/credentials'
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 const Dashboard = ({children}) => {
     
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const auth = getAuth(app);
+const router=useRouter()
+
+  
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
+  const handleSignOut = () => {
+    signOut(auth).then(() => {
+      
+    }).catch((error) => {
+      console.log(error);
+      
+    });
+  }
+  useEffect(() => {
+    const checkAuth = onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        router.push("/login")
+      } 
+      
+    });
+  
+    // Cleanup subscription on unmount
+    return () => checkAuth();
+  }, []);
   return (
     <>
     
@@ -41,14 +65,14 @@ const Dashboard = ({children}) => {
             <Link href="/setting">
               <p className="block px-4 py-2 text-[#d3d3d3] hover:bg-[#4f4f4f]">Profile</p>
             </Link>
-            <Link href="/login">
+            
             <button
-            // Replace with your logout logic
+            onClick={handleSignOut}
               className="block px-4 py-2 text-[#d3d3d3] hover:bg-[#4f4f4f] w-full text-left"
               >
               Logout
             </button>
-              </Link>
+             
           </div>
         )}
       </div>
