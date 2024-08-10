@@ -6,11 +6,12 @@ import {app} from '../../../firebase/credentials'
 import Swal from 'sweetalert2'
 
 import Link from 'next/link'
+import Loader from './Loder'
 
 
 
 const SignupForm = () => {
-  
+  const [checkuser,setCheckuser]=useState('notfound')
   const [username,setusername]=useState()
   const [useremail,setuseremail]=useState()
   const [userpassword,setuserpassword]=useState()
@@ -59,6 +60,9 @@ createUserWithEmailAndPassword(myAuth, useremail,userpassword)
         
         router.push("/")
       }
+      if (!user) {
+        setCheckuser('foounded')
+      }
       
     });
   
@@ -67,8 +71,7 @@ createUserWithEmailAndPassword(myAuth, useremail,userpassword)
   }, []);
   return (
     <>
-      
-      <div class="lg:w-2/6 md:w-1/2 bg-[#2c2c2c] rounded-lg p-8 flex flex-col  w-full transform -translate-x-1/2 -translate-y-1/2 absolute left-1/2 top-1/2 ">
+      {checkuser==='notfound'?<Loader/>:<div class="lg:w-2/6 md:w-1/2 bg-[#2c2c2c] rounded-lg p-8 flex flex-col  w-full transform -translate-x-1/2 -translate-y-1/2 absolute left-1/2 top-1/2 ">
       <h2 class=" text-2xl text-center uppercase  title-font mb-5">Sign Up</h2>
 <form onSubmit={(e)=>formsubmited(e)}>
       <div class="relative mb-4">
@@ -103,7 +106,8 @@ createUserWithEmailAndPassword(myAuth, useremail,userpassword)
 
 
 </form>
-    </div>
+    </div>}
+      
 
 
     </>

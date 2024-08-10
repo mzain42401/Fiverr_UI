@@ -8,9 +8,10 @@ import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import {app} from '../../../firebase/credentials'
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import Loder  from './Loder';
 const Dashboard = ({children}) => {
     
-
+const [checkuser,setCheckuser]=useState("notfound")
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const auth = getAuth(app);
@@ -34,7 +35,12 @@ const router=useRouter()
     const checkAuth = onAuthStateChanged(auth, (user) => {
       if (!user) {
         router.push("/login")
+        setCheckuser("notfound")
       } 
+      if (user) {
+        setCheckuser("found")
+        
+      }
       
     });
   
@@ -43,8 +49,7 @@ const router=useRouter()
   }, []);
   return (
     <>
-    
-    <div className="flex h-screen overflow-hidden">
+    {checkuser==="notfound"?<Loder/>:<div className="flex h-screen overflow-hidden">
       <Sidebar isOpen={sidebarOpen}  />
       <div className="flex-1 flex flex-col">
       <header className="sticky p-4 h-[64px] flex justify-between md:justify-end md:pr-6 items-center bg-[#2c2c2c]  text-white ">
@@ -87,7 +92,8 @@ const router=useRouter()
         {children}
         </main>
       </div>
-    </div>
+    </div>}
+    
     </>
   );
 };
