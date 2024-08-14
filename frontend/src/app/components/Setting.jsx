@@ -1,8 +1,52 @@
+"use client"
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import axios from "axios";
+import {app} from '../../../firebase/credentials'
+import Image from "next/image";
 
 
 const Settings = () => {
-    
+  const auth = getAuth(app);
+  const [email, setEmail] = useState(null);
+  const [name, setName] = useState(null);
+  const [plane, setPlane] = useState(null);
+  const [imageUrl, setImageUrl] = useState();
+
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+          if (!user) {
+            setEmail(null);
+            setName(null);
+            setPlane(null);
+          } else {
+            const findUser = async (email) => {
+              try {
+                const response = await axios.get(`https://itoa-backend.onrender.com/api/users/${email}`);
+                setName(response.data.name);
+                setPlane(response.data.subscriptionPlan);
+            setImageUrl(response.data.imageUrl);
+
+              } catch (error) {
+                if (error.response && error.response.status === 404) {
+                  console.log('User not found');
+                } else {
+                  console.log('Failed to find user:', error.message);
+                }
+              }
+            };
+      
+            findUser(user.email);
+            setEmail(user.email);
+          }
+        });
+      
+        return () => unsubscribe();
+      }, []);
+      
+
     return (
         <>
     
@@ -18,12 +62,20 @@ const Settings = () => {
     </div>
     <div class="border-t border-gray-200 ">
         <dl>
+        <div class="bg-[#2c2c2c] border-t-[.2px]  px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-[#d3d3d3]">
+                    Your Image
+                </dt>
+                <dd class="mt-1 text-sm text-[#d3d3d3] sm:mt-0 sm:col-span-2">
+                  <Image src={imageUrl} width={50} height={50}/>
+                </dd>
+            </div>
             <div class="bg-[#2c2c2c] border-t-[.2px]  px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt class="text-sm font-medium text-[#d3d3d3]">
                     Full name
                 </dt>
                 <dd class="mt-1 text-sm text-[#d3d3d3] sm:mt-0 sm:col-span-2">
-                    Mickael Poulaz
+                    {name}
                 </dd>
             </div>
            
@@ -32,15 +84,15 @@ const Settings = () => {
                     Email address
                 </dt>
                 <dd class="mt-1 text-sm text-[#d3d3d3] sm:mt-0 sm:col-span-2">
-                    m.poul@example.com
+                   {email}
                 </dd>
             </div>
             <div class="bg-[#2c2c2c] border-t-[.2px]  px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt class="text-sm font-medium text-[#d3d3d3]">
-                    Password
+                subscription Plan
                 </dt>
                 <dd class="mt-1 text-sm text-[#d3d3d3] sm:mt-0 sm:col-span-2">
-xxxxx
+{plane}
                 </dd>
             </div>
            

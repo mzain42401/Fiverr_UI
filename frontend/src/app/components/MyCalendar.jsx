@@ -10,7 +10,7 @@ const MyCalendar = () => {
   const [eventName, setEventName] = useState('');
   const [events, setEvents] = useState({});
   const [mounted, setMounted] = useState(false);
-
+ 
   useEffect(() => {
     setMounted(true);
   }, []);
